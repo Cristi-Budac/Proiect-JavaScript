@@ -15,42 +15,34 @@ console.log(numerePare(10));
 
 // 2. Calculați suma numerelor dintr-un șir de numere
 
-// Exemplu 1:
-let num = 2598;
-let sum = 0;
-while (num > 0) {
-  let rem = num % 10;
-  sum = sum + rem;
-  num = parseInt(num / 10);
+function sumaNumerelor(num) {
+  let index = 0;
+  let sum = 0;
+  while (index < num.length) {
+    sum = sum + num[index];
+    index++;
+  }
+  return "sum =" + sum;
 }
-console.log(sum);
-
-// Exemplul 2:
-let num2 = 259865656;
-let sum2 = 0;
-while (num2 > 0) {
-  let rem = num2 % 10;
-  sum2 = sum2 + rem;
-  num2 = parseInt(num / 10);
-}
-console.log(sum2);
+num1 = [1, 3, -50, 100, -20, 20];
+num2 = [3, 4, 3, -20, -13, 59, 12];
+console.log(sumaNumerelor(num1));
+console.log(sumaNumerelor(num2));
 
 // 3. Creați o funcție care inversează un șir de numere
-
-//Exemplul 1:
-const sirNumere = `45645645`;
-let myReversenum = ``;
-for (let i = sirNumere.length - 1; i >= 0; i--) {
-  myReversenum = sirNumere[i];
+range = [1, 5, -23, 5, -15, 28, 5];
+function inversare(array2) {
+  let newRange = [];
+  let index = 0;
+  let newIndex = array2.length - 1;
+  while (index < array2.length) {
+    newRange[index] = array2[newIndex];
+    index++;
+    newIndex--;
+  }
+  return "numar inversat este " + newRange;
 }
-console.log(myReversenum);
-
-// Exemplul 2:
-const sirNumere2 = `45645645`;
-let myReversenum2 = sirNumere2.split("");
-letmyRev = myReversenum2.reverse();
-console.log(myReversenum2);
-
+console.log(inversare(range));
 // 4. Returnează numărul de vocale dintr-un șir de caractere (string)
 
 // Exemplul 1:
@@ -71,7 +63,7 @@ function numaratoareVocale(sir) {
   let count = 0;
   const vocale = "aeiou";
   for (let i = 0; i < sir.length; i++) {
-    if (vocale.indexOf(sir[i]) > -1) {
+    if (vocale.indexOf(sir[i]) !== -1) {
       count++;
     }
   }
