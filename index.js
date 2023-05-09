@@ -1,17 +1,17 @@
 // A DOUA TEMA IN JAVA SCRIPT
 
 // Tipăriți toate numerele pare de la 0 la 10
-function numerePare(num, range) {
-  let count = 0;
-
-  while (range > 0) {
+// Exemplu 1:
+function numerePare(numar) {
+  let range = 0;
+  while (range <= numar) {
     if (range % 2 === 0) {
       console.log(range);
     }
-    range--;
+    range++;
   }
 }
-console.log(numerePare(1, 100));
+console.log(numerePare(10));
 
 // 2. Calculați suma numerelor dintr-un șir de numere
 
